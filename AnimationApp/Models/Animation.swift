@@ -17,19 +17,18 @@ struct Animation {
         preset: \(preset)
         curve: \(curve)
         \(String(format: "force: %.2f", force))
-        duration: \(duration.formatted(.number.precision(.fractionLength(2))))
-        delay: \(delay.formatted(.number.precision(.fractionLength(2))))
+        \(String(format: "duration: %.2f", duration))
+        \(String(format: "delay: %.2f", delay))
         """
-        //force: \(force.formatted(.number.precision(.fractionLength(2))))
     }
     
     static func getRandomAnimation() -> Animation {
         Animation(
             preset: DataStore.shared.presets.randomElement() ?? "",
             curve: DataStore.shared.curves.randomElement() ?? "",
-            force: Double.random(in: 1...2.5),
-            duration: Double.random(in: 0.5...3),
-            delay: Double.random(in: 0...1.5)
+            force: Double.random(in: 1...2),
+            duration: Double.random(in: 0.5...3.5),
+            delay: Double.random(in: 0...0.5)
         )
     }
 }
