@@ -21,9 +21,9 @@ final class ViewController: UIViewController {
         super.viewDidLoad()
         
         springAnimationView.layer.cornerRadius = 20
-        
         runButton.layer.cornerRadius = 10
-        runButton.setTitle("Run \(currentAnimation.preset)", for: .normal)
+        
+        animationAboutLabel.text = currentAnimation.description
     }
     
 
